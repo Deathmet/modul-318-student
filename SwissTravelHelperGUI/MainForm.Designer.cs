@@ -68,7 +68,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(196, 63);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // ToTime_DateTimePicker
             // 
@@ -77,7 +77,7 @@
             this.ToTime_DateTimePicker.Location = new System.Drawing.Point(196, 196);
             this.ToTime_DateTimePicker.Name = "ToTime_DateTimePicker";
             this.ToTime_DateTimePicker.Size = new System.Drawing.Size(200, 30);
-            this.ToTime_DateTimePicker.TabIndex = 5;
+            this.ToTime_DateTimePicker.TabIndex = 15;
             // 
             // DepartureBoard_Button
             // 
@@ -86,7 +86,7 @@
             this.DepartureBoard_Button.Location = new System.Drawing.Point(423, 117);
             this.DepartureBoard_Button.Name = "DepartureBoard_Button";
             this.DepartureBoard_Button.Size = new System.Drawing.Size(121, 30);
-            this.DepartureBoard_Button.TabIndex = 6;
+            this.DepartureBoard_Button.TabIndex = 7;
             this.DepartureBoard_Button.Text = "Abfahrtstaffel";
             this.DepartureBoard_Button.UseVisualStyleBackColor = true;
             // 
@@ -97,7 +97,7 @@
             this.Connection_Button.Location = new System.Drawing.Point(423, 250);
             this.Connection_Button.Name = "Connection_Button";
             this.Connection_Button.Size = new System.Drawing.Size(121, 30);
-            this.Connection_Button.TabIndex = 10;
+            this.Connection_Button.TabIndex = 17;
             this.Connection_Button.Text = "Verbindung";
             this.Connection_Button.UseVisualStyleBackColor = true;
             // 
@@ -109,7 +109,7 @@
             this.Map_Button.Location = new System.Drawing.Point(483, 63);
             this.Map_Button.Name = "Map_Button";
             this.Map_Button.Size = new System.Drawing.Size(30, 30);
-            this.Map_Button.TabIndex = 11;
+            this.Map_Button.TabIndex = 20;
             this.Map_Button.UseVisualStyleBackColor = true;
             // 
             // FromDelete_Button
@@ -120,7 +120,7 @@
             this.FromDelete_Button.Location = new System.Drawing.Point(423, 63);
             this.FromDelete_Button.Name = "FromDelete_Button";
             this.FromDelete_Button.Size = new System.Drawing.Size(30, 30);
-            this.FromDelete_Button.TabIndex = 9;
+            this.FromDelete_Button.TabIndex = 6;
             this.FromDelete_Button.UseVisualStyleBackColor = true;
             this.FromDelete_Button.Click += new System.EventHandler(this.FromDelete_Button_Click);
             // 
@@ -132,27 +132,34 @@
             this.ToDelete_Button.Location = new System.Drawing.Point(423, 196);
             this.ToDelete_Button.Name = "ToDelete_Button";
             this.ToDelete_Button.Size = new System.Drawing.Size(30, 30);
-            this.ToDelete_Button.TabIndex = 8;
+            this.ToDelete_Button.TabIndex = 16;
             this.ToDelete_Button.UseVisualStyleBackColor = true;
             this.ToDelete_Button.Click += new System.EventHandler(this.ToDelete_Button_Click);
             // 
             // From_ComboBox
             // 
+            this.From_ComboBox.AllowDrop = true;
+            this.From_ComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.From_ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.From_ComboBox.FormattingEnabled = true;
             this.From_ComboBox.Location = new System.Drawing.Point(13, 63);
             this.From_ComboBox.Name = "From_ComboBox";
             this.From_ComboBox.Size = new System.Drawing.Size(153, 30);
-            this.From_ComboBox.TabIndex = 12;
+            this.From_ComboBox.TabIndex = 1;
+            this.From_ComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.From_ComboBox_KeyPress);
             // 
             // To_ComboBox
             // 
+            this.To_ComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.To_ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.To_ComboBox.FormattingEnabled = true;
             this.To_ComboBox.Location = new System.Drawing.Point(13, 196);
             this.To_ComboBox.Name = "To_ComboBox";
             this.To_ComboBox.Size = new System.Drawing.Size(153, 30);
-            this.To_ComboBox.TabIndex = 13;
+            this.To_ComboBox.TabIndex = 10;
+            this.To_ComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.To_ComboBox_KeyPress);
             // 
             // MainForm
             // 

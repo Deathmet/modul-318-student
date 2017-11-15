@@ -52,9 +52,9 @@
             this.Date_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Date_Label.Location = new System.Drawing.Point(13, 13);
             this.Date_Label.Name = "Date_Label";
-            this.Date_Label.Size = new System.Drawing.Size(86, 31);
+            this.Date_Label.Size = new System.Drawing.Size(154, 31);
             this.Date_Label.TabIndex = 1;
-            this.Date_Label.Text = "label1";
+            this.Date_Label.Text = "DefaultText";
             // 
             // Stop_Button
             // 
