@@ -39,6 +39,8 @@
             this.ToDelete_Button = new System.Windows.Forms.Button();
             this.From_ComboBox = new System.Windows.Forms.ComboBox();
             this.To_ComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // From_Label
@@ -161,6 +163,26 @@
             this.To_ComboBox.TabIndex = 10;
             this.To_ComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.To_ComboBox_KeyPress);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 31);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Von";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 146);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 31);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Nach";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,7 +197,9 @@
             this.Controls.Add(this.DepartureBoard_Button);
             this.Controls.Add(this.ToTime_DateTimePicker);
             this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.To_Label);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.From_Label);
             this.Name = "MainForm";
             this.Text = "SwissTravelHelper";
@@ -196,6 +220,8 @@
         private System.Windows.Forms.Button Map_Button;
         private System.Windows.Forms.ComboBox From_ComboBox;
         private System.Windows.Forms.ComboBox To_ComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

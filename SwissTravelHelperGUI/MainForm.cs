@@ -31,7 +31,7 @@ namespace SwissTravelHelperGUI
                 {
                     (ToFillComboBox_l as ComboBox).Items.Add(Station_l.Name);
                 }
-                (From_ComboBox as ComboBox).DroppedDown = true;
+                (ToFillComboBox_l as ComboBox).DroppedDown = true;
             }
         }
         /// <summary>
