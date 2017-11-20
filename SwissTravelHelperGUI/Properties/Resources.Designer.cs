@@ -103,6 +103,26 @@ namespace SwissTravelHelperGUI.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Arrow_OutRight_icon {
+            get {
+                object obj = ResourceManager.GetObject("Arrow-OutRight-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Arrow_Updown_icon {
+            get {
+                object obj = ResourceManager.GetObject("Arrow-Updown-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mail_icon {
             get {
                 object obj = ResourceManager.GetObject("Mail-icon", resourceCulture);

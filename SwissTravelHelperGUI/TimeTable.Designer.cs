@@ -28,26 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TimeTable_ListBox = new System.Windows.Forms.ListBox();
             this.Previous_Button = new System.Windows.Forms.Button();
             this.LaterOn_Button = new System.Windows.Forms.Button();
             this.From_Label = new System.Windows.Forms.Label();
             this.To_Label = new System.Windows.Forms.Label();
-            this.Arrow_Label = new System.Windows.Forms.Label();
-            this.Map_Button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TimeTable_DataGridView = new System.Windows.Forms.DataGridView();
+            this.FromMap_Button = new System.Windows.Forms.Button();
+            this.ToMap_Button = new System.Windows.Forms.Button();
+            this.Directions_Button = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.TimeTable_DataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // TimeTable_ListBox
-            // 
-            this.TimeTable_ListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TimeTable_ListBox.FormattingEnabled = true;
-            this.TimeTable_ListBox.Location = new System.Drawing.Point(12, 99);
-            this.TimeTable_ListBox.Name = "TimeTable_ListBox";
-            this.TimeTable_ListBox.Size = new System.Drawing.Size(545, 290);
-            this.TimeTable_ListBox.TabIndex = 0;
             // 
             // Previous_Button
             // 
@@ -60,6 +50,7 @@
             this.Previous_Button.TabIndex = 12;
             this.Previous_Button.Text = "Frühere Verbindung";
             this.Previous_Button.UseVisualStyleBackColor = true;
+            this.Previous_Button.Click += new System.EventHandler(this.Previous_Button_Click);
             // 
             // LaterOn_Button
             // 
@@ -72,6 +63,7 @@
             this.LaterOn_Button.TabIndex = 13;
             this.LaterOn_Button.Text = "Später Verbindung";
             this.LaterOn_Button.UseVisualStyleBackColor = true;
+            this.LaterOn_Button.Click += new System.EventHandler(this.LaterOn_Button_Click);
             // 
             // From_Label
             // 
@@ -97,69 +89,79 @@
             this.To_Label.TabIndex = 15;
             this.To_Label.Text = "Nach";
             // 
-            // Arrow_Label
+            // TimeTable_DataGridView
             // 
-            this.Arrow_Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TimeTable_DataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Arrow_Label.AutoSize = true;
-            this.Arrow_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Arrow_Label.Location = new System.Drawing.Point(235, 18);
-            this.Arrow_Label.Name = "Arrow_Label";
-            this.Arrow_Label.Size = new System.Drawing.Size(67, 31);
-            this.Arrow_Label.TabIndex = 16;
-            this.Arrow_Label.Text = "Pfeil";
+            this.TimeTable_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TimeTable_DataGridView.Location = new System.Drawing.Point(12, 111);
+            this.TimeTable_DataGridView.Name = "TimeTable_DataGridView";
+            this.TimeTable_DataGridView.Size = new System.Drawing.Size(545, 286);
+            this.TimeTable_DataGridView.TabIndex = 22;
             // 
-            // Map_Button
+            // FromMap_Button
             // 
-            this.Map_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Map_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Map_Button.Image = global::SwissTravelHelperGUI.Properties.Resources.Map_Marker_Bubble_Chartreuse_icon;
-            this.Map_Button.Location = new System.Drawing.Point(168, 18);
-            this.Map_Button.Name = "Map_Button";
-            this.Map_Button.Size = new System.Drawing.Size(30, 30);
-            this.Map_Button.TabIndex = 21;
-            this.Map_Button.UseVisualStyleBackColor = true;
+            this.FromMap_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FromMap_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromMap_Button.Image = global::SwissTravelHelperGUI.Properties.Resources.Map_Marker_Bubble_Chartreuse_icon;
+            this.FromMap_Button.Location = new System.Drawing.Point(168, 18);
+            this.FromMap_Button.Name = "FromMap_Button";
+            this.FromMap_Button.Size = new System.Drawing.Size(30, 30);
+            this.FromMap_Button.TabIndex = 21;
+            this.FromMap_Button.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // ToMap_Button
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::SwissTravelHelperGUI.Properties.Resources.Map_Marker_Bubble_Chartreuse_icon;
-            this.button1.Location = new System.Drawing.Point(422, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 22;
-            this.button1.UseVisualStyleBackColor = true;
+            this.ToMap_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ToMap_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToMap_Button.Image = global::SwissTravelHelperGUI.Properties.Resources.Map_Marker_Bubble_Chartreuse_icon;
+            this.ToMap_Button.Location = new System.Drawing.Point(413, 18);
+            this.ToMap_Button.Name = "ToMap_Button";
+            this.ToMap_Button.Size = new System.Drawing.Size(30, 30);
+            this.ToMap_Button.TabIndex = 23;
+            this.ToMap_Button.UseVisualStyleBackColor = true;
+            // 
+            // Directions_Button
+            // 
+            this.Directions_Button.Image = global::SwissTravelHelperGUI.Properties.Resources.Arrow_OutRight_icon;
+            this.Directions_Button.Location = new System.Drawing.Point(241, 21);
+            this.Directions_Button.Name = "Directions_Button";
+            this.Directions_Button.Size = new System.Drawing.Size(75, 30);
+            this.Directions_Button.TabIndex = 24;
+            this.Directions_Button.UseVisualStyleBackColor = true;
+            this.Directions_Button.Click += new System.EventHandler(this.Directions_Button_Click);
             // 
             // TimeTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 454);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Map_Button);
-            this.Controls.Add(this.Arrow_Label);
+            this.Controls.Add(this.Directions_Button);
+            this.Controls.Add(this.ToMap_Button);
+            this.Controls.Add(this.TimeTable_DataGridView);
+            this.Controls.Add(this.FromMap_Button);
             this.Controls.Add(this.To_Label);
             this.Controls.Add(this.From_Label);
             this.Controls.Add(this.LaterOn_Button);
             this.Controls.Add(this.Previous_Button);
-            this.Controls.Add(this.TimeTable_ListBox);
             this.Name = "TimeTable";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TimeTable";
+            ((System.ComponentModel.ISupportInitialize)(this.TimeTable_DataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox TimeTable_ListBox;
         private System.Windows.Forms.Button Previous_Button;
         private System.Windows.Forms.Button LaterOn_Button;
         private System.Windows.Forms.Label From_Label;
         private System.Windows.Forms.Label To_Label;
-        private System.Windows.Forms.Label Arrow_Label;
-        private System.Windows.Forms.Button Map_Button;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button FromMap_Button;
+        private System.Windows.Forms.DataGridView TimeTable_DataGridView;
+        private System.Windows.Forms.Button ToMap_Button;
+        private System.Windows.Forms.Button Directions_Button;
     }
 }
