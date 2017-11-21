@@ -94,7 +94,7 @@
             this.DepartureBoard_Button.Name = "DepartureBoard_Button";
             this.DepartureBoard_Button.Size = new System.Drawing.Size(121, 30);
             this.DepartureBoard_Button.TabIndex = 7;
-            this.DepartureBoard_Button.Text = "Abfahrtstaffel";
+            this.DepartureBoard_Button.Text = "Abfahrtstafel";
             this.DepartureBoard_Button.UseVisualStyleBackColor = true;
             this.DepartureBoard_Button.Click += new System.EventHandler(this.DepartureBoard_Button_Click);
             // 
@@ -183,6 +183,7 @@
             // FromDelete_Button
             // 
             this.FromDelete_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FromDelete_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.FromDelete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromDelete_Button.Image = global::SwissTravelHelperGUI.Properties.Resources.Actions_edit_delete_icon_new;
             this.FromDelete_Button.Location = new System.Drawing.Point(357, 63);
@@ -219,10 +220,8 @@
             // 
             // MainForm
             // 
-            this.AcceptButton = this.DepartureBoard_Button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.FromDelete_Button;
             this.ClientSize = new System.Drawing.Size(490, 329);
             this.Controls.Add(this.From_ComboBox);
             this.Controls.Add(this.FromTo_Label);

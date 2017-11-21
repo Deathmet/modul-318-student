@@ -28,6 +28,22 @@ namespace SwissTravelHelperGUI
 
         }
 
+        public Map Map
+        {
+            get => default(Map);
+            set
+            {
+            }
+        }
+
+        internal TimeTabelValues TimeTabelValues
+        {
+            get => default(TimeTabelValues);
+            set
+            {
+            }
+        }
+
         public void SetTimeTable(string FromStation_p, string ToStation_p, Transport Transport_c, List<Station> StationList_p, String Date_p, string Time_p, string IsArrivalTime_p)
         {
             RefFromstation_l = FromStation_p;

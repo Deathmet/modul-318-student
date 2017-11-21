@@ -137,6 +137,7 @@
             this.Mail_Button.Size = new System.Drawing.Size(30, 30);
             this.Mail_Button.TabIndex = 30;
             this.Mail_Button.UseVisualStyleBackColor = true;
+            this.Mail_Button.Visible = false;
             // 
             // TimeTable
             // 

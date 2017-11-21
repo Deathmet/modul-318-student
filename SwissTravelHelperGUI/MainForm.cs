@@ -20,6 +20,31 @@ namespace SwissTravelHelperGUI
         {
             InitializeComponent();
         }
+
+        public DepartureBoard DepartureBoard
+        {
+            get => default(DepartureBoard);
+            set
+            {
+            }
+        }
+
+        public Map Map
+        {
+            get => default(Map);
+            set
+            {
+            }
+        }
+
+        public TimeTable TimeTable
+        {
+            get => default(TimeTable);
+            set
+            {
+            }
+        }
+
         private bool CheckToFillCombobox(ComboBox ToCheckCombobox, string FillText_l)
         {
             if (ToCheckCombobox.SelectedItem == null)

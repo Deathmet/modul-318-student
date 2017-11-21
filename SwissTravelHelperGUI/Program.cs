@@ -8,6 +8,14 @@ namespace SwissTravelHelperGUI
 {
     static class Program
     {
+        public static MainForm MainForm
+        {
+            get => default(MainForm);
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>

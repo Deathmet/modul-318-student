@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SwissTravelHelperGUI.DepartureBoard" Collapsed="true">
+    <Position X="1.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAABACAAAgAAAQCQAAAAgAAAQ=</HashCode>
+      <FileName>Departure Board.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SwissTravelHelperGUI.MainForm" Collapsed="true">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAECCAAADAQIBAAkgCgAbACCABgABgAAAEA3BgAABQ=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DepartureBoard" />
+      <Property Name="Map" />
+      <Property Name="TimeTable" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SwissTravelHelperGUI.Map" Collapsed="true">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAQCgAAAAAgACAAAACAAIgAAAgAQAAAAAAAAA=</HashCode>
+      <FileName>Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SwissTravelHelperGUI.Program" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SwissTravelHelperGUI.TimeTabelValues" Collapsed="true">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgIAQAAAAAAAAAAAAAQAAAAAAgQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimeTabelValues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SwissTravelHelperGUI.TimeTable" Collapsed="true">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCUAARgADUIAAEAAAKgALJCAAAEARA4QAAAAAgAAAA=</HashCode>
+      <FileName>TimeTable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Map" />
+      <Property Name="TimeTabelValues" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SwissTravelHelperGUI.Properties.Resources" Collapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAgAAAIAAQAACAAAAAAhEAAAAQAAAAAABCAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SwissTravelHelperGUI.Properties.Settings" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

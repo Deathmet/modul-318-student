@@ -86,9 +86,9 @@
             // 
             // Map
             // 
-            this.AcceptButton = this.Stop_Button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.Stop_Button;
             this.ClientSize = new System.Drawing.Size(418, 414);
             this.Controls.Add(this.StationMap_Label);
             this.Controls.Add(this.Stop_Button);
