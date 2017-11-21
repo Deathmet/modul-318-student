@@ -16,6 +16,7 @@ namespace SwissTravelHelperGUI
         Transport Transport_c = new Transport();
         List<Station> StationList_c = new List<Station>();
         int FromToIndicator_l = 0;
+        int FirstTimeIndicator_l = 0;
         public MainForm()
         {
             InitializeComponent();
@@ -69,8 +70,13 @@ namespace SwissTravelHelperGUI
                 {
                     (ToFillComboBox_l as ComboBox).Items.Add(Station_l.Name);
                 }
-                //Verursacht Flackern
-                //(ToFillComboBox_l as ComboBox).DroppedDown = true;
+                if (FirstTimeIndicator_l == 0)
+                {
+                    //Verursacht Flackern
+                    //(ToFillComboBox_l as ComboBox).DroppedDown = true;
+                    (ToFillComboBox_l as ComboBox).SelectedIndex = 0;
+                    FirstTimeIndicator_l = 1;
+                }
             }
         }
         /// <summary>
@@ -89,12 +95,14 @@ namespace SwissTravelHelperGUI
         private void FromDelete_Button_Click(object sender, EventArgs e)
         {
             ClearTextBox_m(From_ComboBox);
+            FirstTimeIndicator_l = 0;
         }
 
         private void ToDelete_Button_Click(object sender, EventArgs e)
         {
             ClearTextBox_m(To_ComboBox);
             To_ComboBox_Leave(null,null);
+            FirstTimeIndicator_l = 0;
         }
 
         private void From_ComboBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -117,6 +125,7 @@ namespace SwissTravelHelperGUI
 
         private void DepartureBoard_Button_Click(object sender, EventArgs e)
         {
+            FirstTimeIndicator_l = 1;
             From_ComboBox_KeyPress(null, new KeyPressEventArgs((Char)Keys.Enter));
             if (CheckToFillCombobox(From_ComboBox, "Von"))
             {
@@ -172,6 +181,7 @@ namespace SwissTravelHelperGUI
 
         private void To_ComboBox_Enter(object sender, EventArgs e)
         {
+            FirstTimeIndicator_l = 0;
             DepartureBoard_Button.Enabled = false;
             Connection_Button.Enabled = true;
         }
