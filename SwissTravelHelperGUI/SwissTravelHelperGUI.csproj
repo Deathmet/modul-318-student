@@ -172,5 +172,8 @@
   <ItemGroup>
     <None Include="Resources\Arrow-Updown-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow-OutLeft-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

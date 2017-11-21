@@ -38,11 +38,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.FromTo_Label = new System.Windows.Forms.Label();
+            this.From_ComboBox = new System.Windows.Forms.ComboBox();
             this.FromTo_Button = new System.Windows.Forms.Button();
             this.Map_Button = new System.Windows.Forms.Button();
             this.FromDelete_Button = new System.Windows.Forms.Button();
             this.ToDelete_Button = new System.Windows.Forms.Button();
-            this.From_ComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // From_Label
@@ -156,6 +156,19 @@
             this.FromTo_Label.TabIndex = 24;
             this.FromTo_Label.Text = "Abfahrtszeit";
             // 
+            // From_ComboBox
+            // 
+            this.From_ComboBox.AllowDrop = true;
+            this.From_ComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.From_ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.From_ComboBox.FormattingEnabled = true;
+            this.From_ComboBox.Location = new System.Drawing.Point(13, 63);
+            this.From_ComboBox.Name = "From_ComboBox";
+            this.From_ComboBox.Size = new System.Drawing.Size(173, 30);
+            this.From_ComboBox.TabIndex = 1;
+            this.From_ComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.From_ComboBox_KeyPress);
+            // 
             // FromTo_Button
             // 
             this.FromTo_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -204,19 +217,6 @@
             this.ToDelete_Button.TabIndex = 16;
             this.ToDelete_Button.UseVisualStyleBackColor = true;
             this.ToDelete_Button.Click += new System.EventHandler(this.ToDelete_Button_Click);
-            // 
-            // From_ComboBox
-            // 
-            this.From_ComboBox.AllowDrop = true;
-            this.From_ComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.From_ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.From_ComboBox.FormattingEnabled = true;
-            this.From_ComboBox.Location = new System.Drawing.Point(13, 63);
-            this.From_ComboBox.Name = "From_ComboBox";
-            this.From_ComboBox.Size = new System.Drawing.Size(173, 30);
-            this.From_ComboBox.TabIndex = 1;
-            this.From_ComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.From_ComboBox_KeyPress);
             // 
             // MainForm
             // 

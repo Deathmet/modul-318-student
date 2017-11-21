@@ -20,6 +20,7 @@ namespace SwissTravelHelperGUI
         public MainForm()
         {
             InitializeComponent();
+
         }
 
         public DepartureBoard DepartureBoard
@@ -70,7 +71,7 @@ namespace SwissTravelHelperGUI
                 {
                     (ToFillComboBox_l as ComboBox).Items.Add(Station_l.Name);
                 }
-                if (FirstTimeIndicator_l == 0)
+                if ((FirstTimeIndicator_l == 0) && (StationList_c != null))
                 {
                     //Verursacht Flackern
                     //(ToFillComboBox_l as ComboBox).DroppedDown = true;

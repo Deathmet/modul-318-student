@@ -97,12 +97,12 @@ namespace SwissTravelHelperGUI
         {
             if (ArrowIndicator == 0)
             {
-                Directions_Button.Image = System.Drawing.Image.FromFile(@"C:\Modul318\Icons\Arrow-OutLeft-icon.png");
+                Directions_Button.Image = Properties.Resources.Arrow_OutLeft_icon;
                 ArrowIndicator = 1;
             }
             else
             {
-                Directions_Button.Image = System.Drawing.Image.FromFile(@"C:\Modul318\Icons\Arrow-OutRight-icon.png");
+                Directions_Button.Image = Properties.Resources.Arrow_OutRight_icon;
                 ArrowIndicator = 0;
             }
             DateTime_l = GetDateTime(RefDate_l, RefTime_l);

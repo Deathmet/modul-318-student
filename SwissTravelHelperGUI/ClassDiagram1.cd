@@ -10,7 +10,7 @@
   <Class Name="SwissTravelHelperGUI.MainForm" Collapsed="true">
     <Position X="4.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAECCAAADAQIBAAkgCgAbACCABgABgAAAEA3BgAABQ=</HashCode>
+      <HashCode>AAAECCAAADAQIBAAkgCgAbACCABgABgCAAEA3BgAABQ=</HashCode>
       <FileName>MainForm.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -54,16 +54,10 @@
       <Property Name="TimeTabelValues" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="SwissTravelHelperGUI.Properties.Resources" Collapsed="true">
-    <Position X="7.25" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gAgAAAIAAQAACAAAAAAhEAAAAQAAAAAABCAAAAAAAIA=</HashCode>
-    </TypeIdentifier>
-  </Class>
   <Class Name="SwissTravelHelperGUI.Properties.Settings" Collapsed="true">
     <Position X="7.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAABAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
