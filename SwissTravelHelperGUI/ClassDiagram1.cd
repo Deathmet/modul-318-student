@@ -37,14 +37,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SwissTravelHelperGUI.TimeTabelValues" Collapsed="true">
-    <Position X="4.75" Y="4.5" Width="1.5" />
+    <Position X="4.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgIAQAAAAAAAAAAAAAQAAAAAAgQAAAAAAAAAAAAAA=</HashCode>
       <FileName>TimeTabelValues.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SwissTravelHelperGUI.TimeTable" Collapsed="true">
-    <Position X="4.75" Y="3.25" Width="1.5" />
+    <Position X="4.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQCUAARgADUIAAEAAAKgALJCAAAEARA4QAAAAAgAAAA=</HashCode>
       <FileName>TimeTable.cs</FileName>
@@ -53,12 +53,6 @@
       <Property Name="Map" />
       <Property Name="TimeTabelValues" />
     </ShowAsAssociation>
-  </Class>
-  <Class Name="SwissTravelHelperGUI.Properties.Settings" Collapsed="true">
-    <Position X="7.25" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAABAAA=</HashCode>
-    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
