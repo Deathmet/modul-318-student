@@ -19,6 +19,7 @@ namespace SwissTravelHelperGUI
         string RefTime_l = null;
         string RefIsArrivalTime_l = null;
         Transport RefTransport_l = null;
+        List<Station> RefStationList_l = null;
         int ArrowIndicator = 0;
         DateTime DateTime_l;
         public TimeTable()
@@ -26,8 +27,8 @@ namespace SwissTravelHelperGUI
             InitializeComponent();
 
         }
-        
-        public void SetTimeTable(string FromStation_p, string ToStation_p, Transport Transport_c, String Date_p, string Time_p, string IsArrivalTime_p)
+
+        public void SetTimeTable(string FromStation_p, string ToStation_p, Transport Transport_c, List<Station> StationList_p, String Date_p, string Time_p, string IsArrivalTime_p)
         {
             RefFromstation_l = FromStation_p;
             RefToStation_l = ToStation_p;
@@ -35,6 +36,7 @@ namespace SwissTravelHelperGUI
             RefTime_l = Time_p;
             RefIsArrivalTime_l = IsArrivalTime_p;
             RefTransport_l = Transport_c;
+            RefStationList_l = StationList_p;
 
             List<Connection> ConnectionsList_c = Transport_c.GetConnections(FromStation_p, ToStation_p, Date_p, Time_p, IsArrivalTime_p).ConnectionList;
             BindingList<TimeTabelValues> TimeTableValueList_c = new BindingList<TimeTabelValues>();
@@ -45,7 +47,7 @@ namespace SwissTravelHelperGUI
                 TimeTableValue_c.FromStation_g = Connection_l.From.Station.Name.ToString();
                 TimeTableValue_c.ToStation_g = Connection_l.To.Station.Name.ToString();
                 TimeTableValue_c.DepartureTime_g = Convert.ToDateTime(Connection_l.From.Departure).ToString("HH:mm");
-                TimeTableValue_c.ArrivalTime_g=  Convert.ToDateTime(Connection_l.To.Arrival).ToString("HH:mm");
+                TimeTableValue_c.ArrivalTime_g = Convert.ToDateTime(Connection_l.To.Arrival).ToString("HH:mm");
                 if (Connection_l.From.Platform != null)
                     TimeTableValue_c.Line_g = Connection_l.From.Platform.ToString();
                 TimeTableValue_c.Durration_g = Convert.ToDateTime(Connection_l.Duration.Split('d')[1]).ToString("HH:mm");
@@ -65,14 +67,14 @@ namespace SwissTravelHelperGUI
         {
             DateTime_l = GetDateTime(RefDate_l, RefTime_l);
             DateTime_l = DateTime_l.AddHours(-1);
-            SetTimeTable(RefFromstation_l, RefToStation_l, RefTransport_l, GetDate(DateTime_l), GetTime(DateTime_l), RefIsArrivalTime_l);
+            SetTimeTable(RefFromstation_l, RefToStation_l, RefTransport_l, RefStationList_l, GetDate(DateTime_l), GetTime(DateTime_l), RefIsArrivalTime_l);
         }
 
         private void LaterOn_Button_Click(object sender, EventArgs e)
         {
             DateTime_l = GetDateTime(RefDate_l, RefTime_l);
             DateTime_l = DateTime_l.AddHours(+1);
-            SetTimeTable(RefFromstation_l, RefToStation_l, RefTransport_l, GetDate(DateTime_l), GetTime(DateTime_l), RefIsArrivalTime_l);
+            SetTimeTable(RefFromstation_l, RefToStation_l, RefTransport_l, RefStationList_l, GetDate(DateTime_l), GetTime(DateTime_l), RefIsArrivalTime_l);
         }
 
         private void Directions_Button_Click(object sender, EventArgs e)
@@ -88,7 +90,7 @@ namespace SwissTravelHelperGUI
                 ArrowIndicator = 0;
             }
             DateTime_l = GetDateTime(RefDate_l, RefTime_l);
-            SetTimeTable(RefToStation_l, RefFromstation_l, RefTransport_l, GetDate(DateTime_l),GetTime(DateTime_l), RefIsArrivalTime_l);
+            SetTimeTable(RefToStation_l, RefFromstation_l, RefTransport_l, RefStationList_l, GetDate(DateTime_l), GetTime(DateTime_l), RefIsArrivalTime_l);
         }
         private DateTime GetDateTime(string Date_p, string Time_p)
         {
@@ -119,5 +121,16 @@ namespace SwissTravelHelperGUI
             return Date_l;
         }
 
+        private void FromMap_Button_Click(object sender, EventArgs e)
+        {
+            Map Map_c = new Map();
+            Map_c.GetCordination(RefStationList_l, RefTransport_l, RefFromstation_l);
+        }
+
+        private void ToMap_Button_Click(object sender, EventArgs e)
+        {
+            Map Map_c = new Map();
+            Map_c.GetCordination(RefStationList_l, RefTransport_l, RefToStation_l);
+        }
     }
 }

@@ -52,7 +52,7 @@
             this.Stop_Button.Location = new System.Drawing.Point(303, 301);
             this.Stop_Button.Name = "Stop_Button";
             this.Stop_Button.Size = new System.Drawing.Size(98, 34);
-            this.Stop_Button.TabIndex = 11;
+            this.Stop_Button.TabIndex = 10;
             this.Stop_Button.Text = "Abbrechen";
             this.Stop_Button.UseVisualStyleBackColor = true;
             this.Stop_Button.Click += new System.EventHandler(this.Stop_Button_Click);
@@ -65,7 +65,7 @@
             this.Mail_Button.Location = new System.Drawing.Point(371, 16);
             this.Mail_Button.Name = "Mail_Button";
             this.Mail_Button.Size = new System.Drawing.Size(30, 30);
-            this.Mail_Button.TabIndex = 12;
+            this.Mail_Button.TabIndex = 5;
             this.Mail_Button.UseVisualStyleBackColor = true;
             // 
             // DepartureBoard_DataGridView
@@ -77,12 +77,14 @@
             this.DepartureBoard_DataGridView.Location = new System.Drawing.Point(12, 58);
             this.DepartureBoard_DataGridView.Name = "DepartureBoard_DataGridView";
             this.DepartureBoard_DataGridView.Size = new System.Drawing.Size(389, 235);
-            this.DepartureBoard_DataGridView.TabIndex = 13;
+            this.DepartureBoard_DataGridView.TabIndex = 1;
             // 
             // DepartureBoard
             // 
+            this.AcceptButton = this.Mail_Button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.Stop_Button;
             this.ClientSize = new System.Drawing.Size(413, 345);
             this.Controls.Add(this.DepartureBoard_DataGridView);
             this.Controls.Add(this.Mail_Button);

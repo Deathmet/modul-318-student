@@ -178,6 +178,7 @@
             this.Map_Button.Size = new System.Drawing.Size(30, 30);
             this.Map_Button.TabIndex = 20;
             this.Map_Button.UseVisualStyleBackColor = true;
+            this.Map_Button.Click += new System.EventHandler(this.Map_Button_Click);
             // 
             // FromDelete_Button
             // 
@@ -218,8 +219,10 @@
             // 
             // MainForm
             // 
+            this.AcceptButton = this.DepartureBoard_Button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.FromDelete_Button;
             this.ClientSize = new System.Drawing.Size(490, 329);
             this.Controls.Add(this.From_ComboBox);
             this.Controls.Add(this.FromTo_Label);
@@ -236,6 +239,7 @@
             this.Controls.Add(this.To_Label);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.From_Label);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "SwissTravelHelper";
             this.ResumeLayout(false);

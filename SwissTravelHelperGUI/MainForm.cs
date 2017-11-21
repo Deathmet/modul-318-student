@@ -20,11 +20,16 @@ namespace SwissTravelHelperGUI
         {
             InitializeComponent();
         }
-        private void CheckToFillCombobox(ComboBox ToCheckCombobox, string FillText_l)
+        private bool CheckToFillCombobox(ComboBox ToCheckCombobox, string FillText_l)
         {
             if (ToCheckCombobox.SelectedItem == null)
             {
                 MessageBox.Show("Geben Sie eine Station im Feld " + FillText_l + " an.");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
         private void GetStationsList_l(string InputValue_l)
@@ -39,7 +44,8 @@ namespace SwissTravelHelperGUI
                 {
                     (ToFillComboBox_l as ComboBox).Items.Add(Station_l.Name);
                 }
-                (ToFillComboBox_l as ComboBox).DroppedDown = true;
+                //Verursacht Flackern
+                //(ToFillComboBox_l as ComboBox).DroppedDown = true;
             }
         }
         /// <summary>
@@ -87,35 +93,38 @@ namespace SwissTravelHelperGUI
         private void DepartureBoard_Button_Click(object sender, EventArgs e)
         {
             From_ComboBox_KeyPress(null, new KeyPressEventArgs((Char)Keys.Enter));
-            CheckToFillCombobox(From_ComboBox, "Von");
-            DepartureBoard departureBoard_c = new DepartureBoard();
-            foreach (Station Station_l in StationList_c)
+            if (CheckToFillCombobox(From_ComboBox, "Von"))
             {
-                if (Station_l.Name == (string)From_ComboBox.SelectedItem)
+                DepartureBoard departureBoard_c = new DepartureBoard();
+                foreach (Station Station_l in StationList_c)
                 {
-                    departureBoard_c.SetDepartureBoard(Station_l.Name,Station_l.Id, Transport_c);
-                    departureBoard_c.Show();
+                    if (Station_l.Name == (string)From_ComboBox.SelectedItem)
+                    {
+                        departureBoard_c.SetDepartureBoard(Station_l.Name, Station_l.Id, Transport_c);
+                        departureBoard_c.Show();
+                    }
                 }
             }
         }
 
         private void Connection_Button_Click(object sender, EventArgs e)
         {
-            CheckToFillCombobox(From_ComboBox, "Von");
-            CheckToFillCombobox(To_ComboBox, "Nach");
-            TimeTable TimeTable_c = new TimeTable();
-            if (FromToIndicator_l == 0)
+            if (CheckToFillCombobox(From_ComboBox, "Von") &&
+                    CheckToFillCombobox(To_ComboBox, "Nach"))
             {
-                TimeTable_c.SetTimeTable((string)From_ComboBox.SelectedItem, (string)To_ComboBox.SelectedItem, Transport_c,
-                    TimeTable_c.GetDate(Convert.ToDateTime(FromTime_DateTimePicker.Text)), TimeTable_c.GetTime(Convert.ToDateTime(FromTime_DateTimePicker.Text)), FromToIndicator_l.ToString());
+                TimeTable TimeTable_c = new TimeTable();
+                if (FromToIndicator_l == 0)
+                {
+                    TimeTable_c.SetTimeTable((string)From_ComboBox.SelectedItem, (string)To_ComboBox.SelectedItem, Transport_c, StationList_c,
+                        TimeTable_c.GetDate(Convert.ToDateTime(FromTime_DateTimePicker.Text)), TimeTable_c.GetTime(Convert.ToDateTime(FromTime_DateTimePicker.Text)), FromToIndicator_l.ToString());
+                }
+                else
+                {
+                    TimeTable_c.SetTimeTable((string)From_ComboBox.SelectedItem, (string)To_ComboBox.SelectedItem, Transport_c, StationList_c,
+                        TimeTable_c.GetDate(Convert.ToDateTime(ToTime_DateTimePicker.Text)), TimeTable_c.GetTime(Convert.ToDateTime(ToTime_DateTimePicker.Text)), FromToIndicator_l.ToString());
+                }
+                TimeTable_c.Show();
             }
-            else
-            {
-                TimeTable_c.SetTimeTable((string)From_ComboBox.SelectedItem, (string)To_ComboBox.SelectedItem, Transport_c,
-                    TimeTable_c.GetDate(Convert.ToDateTime(ToTime_DateTimePicker.Text)), TimeTable_c.GetTime(Convert.ToDateTime(ToTime_DateTimePicker.Text)), FromToIndicator_l.ToString());
-            }
-            TimeTable_c.Show();
-            
         }
 
         private void FromTo_Button_Click(object sender, EventArgs e)
@@ -150,5 +159,15 @@ namespace SwissTravelHelperGUI
                 Connection_Button.Enabled = false;
             }
         }
+
+        private void Map_Button_Click(object sender, EventArgs e)
+        {
+            if (CheckToFillCombobox(From_ComboBox, "Von"))
+            {
+                Map Map_c = new Map();
+                Map_c.GetCordination(StationList_c,Transport_c, From_ComboBox.SelectedItem.ToString());
+            }
+        }
+ 
     }
 }
